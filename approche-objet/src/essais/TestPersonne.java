@@ -5,6 +5,10 @@ import entites.Personne;
 
 public class TestPersonne {
     public static void main(String[] args) {
+        AdressePostale adresse1 = new AdressePostale("14","lasBas","85000","PASICI");
+        Personne p1 = new Personne("Julien","Pajot",adresse1);
+        Personne p2 = new Personne();
+        /*
         AdressePostale adresse = new AdressePostale();
         adresse.codePostal = "85150";
         adresse.libelleRue = "laBas";
@@ -25,8 +29,8 @@ public class TestPersonne {
         Personne p2 = new Personne();
         p1.nom = "GAAAALLAAAAAAAAAD";
         p1.prenom = "Dos santos";
-        p1.adresse = adresse2;
+        p1.adresse = adresse2;*/
 
-        
+
     }
 }
