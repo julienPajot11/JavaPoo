@@ -14,4 +14,32 @@ public class Personne {
         this.prenom = prenom;
         this.adresse = adresse;
     }
+
+    public void afficherPrenom(){
+        System.out.println("Nom : " + this.nom + " Prenom : " +this.prenom);
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public AdressePostale getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(AdressePostale adresse) {
+        this.adresse = adresse;
+    }
 }

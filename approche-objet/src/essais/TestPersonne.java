@@ -8,6 +8,8 @@ public class TestPersonne {
         AdressePostale adresse1 = new AdressePostale("14","lasBas","85000","PASICI");
         Personne p1 = new Personne("Julien","Pajot",adresse1);
         Personne p2 = new Personne();
+
+        p1.afficherPrenom();
         /*
         AdressePostale adresse = new AdressePostale();
         adresse.codePostal = "85150";
