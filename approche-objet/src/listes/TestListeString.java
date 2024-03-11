@@ -19,10 +19,22 @@ public class TestListeString {
         ville.add("Tarbes");
 
         System.out.println("Liste de départ");
-        for (int i = 0; i < ville.size(); i++) {
+        parcourir(ville);
+        stringLePlusGrand(ville);
+        majuscule(ville);
+        suppressionAvecN(ville);
+        parcourir(ville);
 
+
+    }
+
+    public static void parcourir(List<String> ville){
+        for (int i = 0; i < ville.size(); i++) {
             System.out.println(ville.get(i));
         }
+    }
+
+    public static void stringLePlusGrand(List<String> ville){
         Integer max = 0;
         for (int i = 0; i < ville.size(); i++) {
             if ( ville.get(max).length() < ville.get(i).length()) {
@@ -32,14 +44,18 @@ public class TestListeString {
         }
         System.out.println("String le plus grand");
         System.out.println(ville.get(max));
+    }
 
+    public static void majuscule(List<String> ville){
         System.out.println("String en majuscule");
         for (int i = 0; i < ville.size(); i++) {
             ville.set(i, ville.get(i).toUpperCase());
             System.out.println(ville.get(i));
 
         }
+    }
 
+    public static void suppressionAvecN(List<String> ville){
         System.out.println("Suppression des string avec un n");
         Iterator<String> iter = ville.iterator();
         while (iter.hasNext()) {
@@ -52,7 +68,5 @@ public class TestListeString {
 
             System.out.println(ville.get(i));
         }
-
-
     }
 }

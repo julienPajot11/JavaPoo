@@ -1,5 +1,7 @@
 package listes;
 
+import sets.Pays;
+
 import java.util.*;
 
 public class TestListeInt {
@@ -15,29 +17,47 @@ public class TestListeInt {
         nombre.add(4);
         nombre.add(8);
         nombre.add(5);
-        System.out.println("Liste de départ");
-        for (int i = 0; i < nombre.size(); i++) {
 
-            System.out.println(nombre.get(i));
+        parcourir(nombre);
+        tailleListe(nombre);
+        plusGrandNombre(nombre);
+        deletePlusPetitNombre(nombre);
+
+    }
+
+    public static void parcourir(List<Integer> nombre){
+        for (Integer nb: nombre){
+            System.out.println("Nombre : " + nb.toString());
         }
-        System.out.println("taille de la liste");
+    }
+
+    public static Integer tailleListe(List<Integer> nombre){
         System.out.println(nombre.size());
+        return nombre.size();
+    }
 
-        System.out.println("Le nombre max");
+    public static Integer plusGrandNombre(List<Integer> nombre){
         System.out.println(Collections.max(nombre));
+        return Collections.max(nombre);
+    }
 
-        System.out.println("Le nombre min");
+    public static Integer plusPetitNombre(List<Integer> nombre){
         System.out.println(Collections.min(nombre));
+        return Collections.min(nombre);
+    }
+
+    public static void deletePlusPetitNombre(List<Integer> nombre){
         Iterator<Integer> iter = nombre.iterator();
         while (iter.hasNext()) {
             Integer nomb = iter.next();
-            if (nomb.equals(Collections.min(nombre))) {
+            if (nomb.equals(plusPetitNombre(nombre))) {
                 iter.remove();
             }
         }
-        System.out.println("Le nombre min après la suppresion");
-        System.out.println(Collections.min(nombre));
+        parcourir(nombre);
+    }
 
+    public static void absoluteNumber(List<Integer> nombre){
         for (int i = 0; i < nombre.size(); i++) {
             if(nombre.get(i) <0 ) {
                 System.out.println("Changement des négatifs en positif");
@@ -46,6 +66,6 @@ public class TestListeInt {
 
             System.out.println(nombre.get(i));
         }
-
+        parcourir(nombre);
     }
 }
