@@ -18,7 +18,7 @@ public class ShifumiGame {
         System.out.println("Entrer votre pseudo : ");
         Player player = new Player(sc.nextLine());
         System.out.println(player + " vs ordinateur" );
-        Game(1,player);
+        Game(3,player);
     }
 
     public static void Game(int nbGame,Player player){
