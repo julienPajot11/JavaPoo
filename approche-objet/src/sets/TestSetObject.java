@@ -1,8 +1,6 @@
 package sets;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class TestSetObject {
     public static void main(String[] args) {
@@ -16,6 +14,8 @@ public class TestSetObject {
         set.add (new Pays("Inde", 1412400000, 2654.0));
         set.add(new Pays("Chine", 1453400000, 13694.0));
         set.add( new Pays("Russie", 146200000, 12146.0));
+
+
 
         pibHab(set);
         pibTotal(set);
