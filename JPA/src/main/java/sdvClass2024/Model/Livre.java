@@ -4,12 +4,11 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="livre")
 public class Livre implements Serializable {
-
-
 
     @Id
     @Column(name="ID")
@@ -19,6 +18,15 @@ public class Livre implements Serializable {
     private String titre;
     @Column(name="AUTEUR")
     private String auteur;
+
+    @ManyToMany
+    @JoinTable(name="COMPO",
+            joinColumns= @JoinColumn(name="ID_LIV", referencedColumnName=
+                    "ID"),
+            inverseJoinColumns= @JoinColumn(name="ID_EMP", referencedColumnName="ID")
+    )
+    private Set<Emprunt> emprunts;
+
 
     public Livre() {
     }
