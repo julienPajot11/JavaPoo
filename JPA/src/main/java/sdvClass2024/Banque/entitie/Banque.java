@@ -16,10 +16,18 @@ public class Banque implements Serializable {
     @Column(name = "NOM")
     private String nom;
 
-    @OneToMany(mappedBy="banque")
+    @OneToMany(mappedBy="banque" , cascade = CascadeType.ALL)
     private Set<Client> clients;
 
+    public Banque() {
+    }
+
+    public Banque(String nom) {
+        this.nom = nom;
+    }
 
 
-
+    public void setClients(Set<Client> clients) {
+        this.clients = clients;
+    }
 }

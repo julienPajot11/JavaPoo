@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name ="operation")
-public abstract class Operation implements Serializable {
+public class Operation implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +26,18 @@ public abstract class Operation implements Serializable {
     @ManyToOne
     @JoinColumn(name="COMPTE_ID")
     private Compte compte;
+
+    public Operation() {
+    }
+
+    public Operation(LocalDateTime date, Double montant, String motif) {
+        this.date = date;
+        this.montant = montant;
+        this.motif = motif;
+
+    }
+
+    public void setCompte(Compte compte) {
+        this.compte = compte;
+    }
 }
